@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Input } from '@angular/core';
+import { usuario } from 'src/app/models/usuarios'
 @Component({
   selector: 'app-perfiles-usuarios',
   templateUrl: './perfiles-usuarios.component.html',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilesUsuariosComponent implements OnInit {
 
+  @Input() usuario: usuario;
   constructor() { }
 
   ngOnInit(): void {
+    this.usuario = new usuario('','','','',0,'','','','');
   }
 
 }

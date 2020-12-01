@@ -9,6 +9,9 @@ import { PerfilesUsuariosComponent } from './components/Usuarios/perfiles-usuari
 import { ListadoUsuariosComponent } from './components/Usuarios/listado-usuarios/listado-usuarios.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { RegistroUsuariosComponent } from './components/Usuarios/registro-usuarios/registro-usuarios.component';
+import { MostrarUsuariosComponent } from './components/Usuarios/mostrar-usuarios/mostrar-usuarios.component';
+import { ElementoUsuarioComponent } from './components/Usuarios/elemento-usuario/elemento-usuario.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { FooterComponent } from './components/footer/footer.component';
     PerfilesUsuariosComponent,
     ListadoUsuariosComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    RegistroUsuariosComponent,
+    MostrarUsuariosComponent,
+    ElementoUsuarioComponent
   ],
   imports: [
     BrowserModule,
