@@ -1,1 +1,24 @@
-<p>listado-usuarios-admin works!</p>
+
+
+<ul *ngFor="let item of arrayEvents; let i = index" [attr.data-index]="i">
+  <div class="card">
+    <h5 class="card-header">{{item.nombre}}</h5>
+    <div class="card-body">
+      <h5 class="card-title">{{item.apellido}}</h5>
+
+      <li>{{item.nombre}}</li>
+      <li>{{item.apellido}}</li>
+      <li>{{item.password}}</li>
+      <li>{{item.email}}</li>
+      <li>{{item.edad}}</li>
+      <li>{{item.sexo}}</li>
+      <li>{{item.localidad}}</li>
+      <li>{{item.descripcion}}</li>
+      <li>{{item.imagen}}</li>
+
+      <br>
+      <input class="btn btn-success" type="button" (click)="eliminar(i)" value="eliminar"/>
+    </div>
+  </div>
+</ul>
+

@@ -7,6 +7,8 @@ export class usuario{
     public password: string,
     public email: string,
     public edad: string,
+    public sexo: string,
+    public localidad: string,
     public descripcion: string,
     public imagen:string
   ) { }
