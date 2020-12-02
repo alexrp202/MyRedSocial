@@ -14,9 +14,12 @@ export class MostrarUsuariosComponent implements OnInit {
   Informacion:boolean=false;
   // Se llama al inicializar el componente
   ngOnInit(): void {
+    this.ArrayUsuarios.push(new usuario( 'Ousmane', 'Dembele', '********','OusmaneDembo@mail.com','23','Hombre','Vernon,Francia','Delantero en el Fútbol Club Barcelona.','https://tmssl.akamaized.net/images/portrait/header/288230-1561038993.jpg'))
     // Cargamos el personaje que tengamos guardado previamente en memoria del navegador
-    let usuario = localStorage.getItem('usuario');
-    this.UsuarioSeleccionado = JSON.parse(usuario);
+    let usuarios = localStorage.getItem('usuario');
+    this.UsuarioSeleccionado = JSON.parse(usuarios);
+
+
   }
 
   // Función que se ejecuta al hacer click en un personaje de la lista
