@@ -1,0 +1,205 @@
+<div class="container">
+
+  <form [formGroup]="myForm" (ngSubmit)="EnviarDatos()">
+    <div class="form-group">
+
+      <!-- NOMBRE -->
+      <div class="form-group">
+        <label>Nombre</label>
+        <input nombre="nombre" [(ngModel)]="ModeloFormulario.nombre" nombre="nombre" formControlName="nombre"
+          type="text" class="form-control" placeholder="Introduce tu nombre" />
+      </div>
+      <div *ngIf="myForm.get('nombre').hasError('required') && myForm.get('nombre').touched" class="alert alert-danger">
+        Este campo es obligatorio
+      </div>
+
+      <div *ngIf="myForm.get('nombre').hasError('maxlength') && myForm.get('nombre').touched" class="alert alert-danger">
+        El nombre es demasiado largo
+      </div>
+      <div *ngIf="myForm.get('nombre').hasError('minlength') && myForm.get('nombre').touched" class="alert alert-danger">
+        El nombre es demasiado corto
+      </div>
+
+      <!-- APELLIDOS -->
+
+      <div class="form-group">
+        <label>Apellido</label>
+        <input name="apellido" [(ngModel)]="ModeloFormulario.apellido" formControlName="apellido"  type="text"
+          class="form-control" placeholder="Introduce tus apellidos" />
+      </div>
+      <!-- VALIDACIONES -->
+      <div *ngIf="myForm.get('apellido').hasError('required') && myForm.get('apellido').touched"
+        class="alert alert-danger">
+        Este campo es obligatorio
+      </div>
+      <div *ngIf="myForm.get('apellido').hasError('maxlength') && myForm.get('apellido').touched"
+        class="alert alert-danger">
+        El apellido es demasiado largo
+      </div>
+      <div *ngIf="myForm.get('apellido').hasError('minlength') && myForm.get('apellido').touched"
+        class="alert alert-danger">
+        El apellido es demasiado corto
+      </div>
+
+
+      <!-- CONTRASEÑA -->
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input name="password" [(ngModel)]="ModeloFormulario.password" formControlName="password" type="password"
+          class="form-control" placeholder="Introduce tu contraseña" />
+      </div>
+          <!-- VALIDACIONES -->
+      <div *ngIf="myForm.get('password').hasError('required') && myForm.get('password').touched"
+      class="alert alert-danger">
+      Este campo es obligatorio
+    </div>
+    <div *ngIf="myForm.get('password').hasError('maxlength') && myForm.get('password').touched"
+      class="alert alert-danger">
+      La contraseña es demasiado larga
+    </div>
+    <div *ngIf="myForm.get('password').hasError('minlength') && myForm.get('password').touched"
+      class="alert alert-danger">
+      La contraseña es demasiado corta
+    </div>
+
+<!-- CORREO ELECTRONICO -->
+<label>Correo electronico</label>
+<input name="email" [(ngModel)]="ModeloFormulario.email"  formControlName="email" type="email"
+  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+  placeholder="Introduce e-mail de contacto" />
+
+      <!-- VALIDACIONES -->
+<div *ngIf="myForm.get('email').hasError('email') && myForm.get('email').touched" class="alert alert-danger">
+  Es necesario introducir un email valido
+</div>
+
+</div>
+<div *ngIf="myForm.get('email').hasError('required') && myForm.get('email').touched" class="alert alert-danger">
+Este campo es obligatorio
+</div>
+
+
+  <!-- EDAD -->
+  <div class="form-group">
+    <label>Edad</label>
+    <input name="ubicacion" [(ngModel)]="ModeloFormulario.edad" formControlName="edad"  type="number"
+      class="form-control" placeholder="Introduce tu edad" />
+  </div>
+
+      <!-- VALIDACIONES -->
+  <div *ngIf="myForm.get('edad').hasError('required') && myForm.get('edad').touched"
+  class="alert alert-danger">
+  Este campo es obligatorio
+</div>
+
+<div *ngIf="myForm.get('edad').hasError('max') && myForm.get('edad').touched"
+  class="alert alert-danger">
+  Es necesario introducir una edad valida
+</div>
+
+<div *ngIf="myForm.get('edad').hasError('min') && myForm.get('edad').touched"
+  class="alert alert-danger">
+  Es necesario introducir una edad valida
+</div>
+
+ <!-- SEXO -->
+ <div class="form-group">
+  <label for="exampleFormControlSelect1">Sexo</label>
+  <select class="form-control" [(ngModel)]="ModeloFormulario.sexo" id="sexo" formControlName="sexo" >
+    <option disabled >Selecciona una opcion</option>
+    <option>Hombre</option>
+    <option>Mujer</option>
+    <option>Otros</option>
+  </select>
+</div>
+
+    <!-- VALIDACIONES -->
+<div *ngIf="myForm.get('sexo').hasError('required') && myForm.get('sexo').touched"
+class="alert alert-danger">
+Este campo es obligatorio
+</div>
+ <!-- LOCALIDAD -->
+ <div class="form-group">
+  <label>Localidad</label>
+  <input name="password" [(ngModel)]="ModeloFormulario.localidad" formControlName="localidad"  type="text"
+    class="form-control" placeholder="Localidad:" />
+</div>
+<div *ngIf="myForm.get('localidad').hasError('required') && myForm.get('localidad').touched"
+class="alert alert-danger">
+Este campo es obligatorio
+</div>
+<div *ngIf="myForm.get('localidad').hasError('maxlength') && myForm.get('localidad').touched"
+class="alert alert-danger">
+La localidad es demasiado larga
+</div>
+<div *ngIf="myForm.get('localidad').hasError('minlength') && myForm.get('localidad').touched"
+class="alert alert-danger">
+La localidad es demasiado corta
+</div>
+
+
+    <!-- DESCRIPCION -->
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Descripcion personal</label>
+      <textarea class="form-control" [(ngModel)]="ModeloFormulario.descripcion" formControlName="descripcion"
+        rows="3"></textarea>
+    </div>
+
+        <!-- VALIDACIONES -->
+
+    <div *ngIf="myForm.get('descripcion').hasError('required') && myForm.get('descripcion').touched"
+      class="alert alert-danger">
+      Este campo es obligatorio
+    </div>
+
+    <div *ngIf="myForm.get('descripcion').hasError('maxlength') && myForm.get('descripcion').touched"
+      class="alert alert-danger">
+      La descripcion es demasiado larga
+    </div>
+
+    <div *ngIf="myForm.get('descripcion').hasError('minlength') && myForm.get('descripcion').touched"
+      class="alert alert-danger">
+      La descripcion es demasiado corta
+    </div>
+
+
+    <!-- IMAGEN -->
+    <label>Imagen</label>
+    <input name="imagen" formControlName="imagen" [(ngModel)]="ModeloFormulario.imagen"  type="text"
+      class="form-control" placeholder="Introduce el LINK de la imagen" />
+
+          <!-- VALIDACIONES -->
+
+    <div *ngIf="myForm.get('imagen').hasError('required') && myForm.get('imagen').touched" class="alert alert-danger">
+      Este campo es obligatorio
+    </div>
+    <div *ngIf="myForm.get('imagen').hasError('pattern') && myForm.get('imagen').touched" class="alert alert-danger">
+      Debes introducir un link valido
+    </div>
+    <br>
+
+
+    <!-- CHECKBOX -->
+    <input formControlName="checkbox" type="checkbox" name="active" ngModel required> Acepto las politicas de uso
+    <br><br>
+
+    <!-- BOTON ENVIAR -->
+    <button  [disabled]="myForm.invalid"  type="submit" class="btn btn-primary">
+      Enviar
+    </button>
+
+  </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
