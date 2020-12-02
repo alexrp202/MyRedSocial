@@ -35,20 +35,20 @@ Swal
         })
 
         swalWithBootstrapButtons.fire({
-          title: 'Are you sure?',
-          text: "You won't be able to revert this!",
+          title: 'Estas seguro?',
+          text: "No vas a poder revertir los cambios",
           icon: 'warning',
           showCancelButton: true,
-          confirmButtonText: 'Yes, delete it!',
-          cancelButtonText: 'No, cancel!',
+          confirmButtonText: 'Si, deseo borrar!',
+          cancelButtonText: 'No, cancelar!',
           reverseButtons: true
         }).then((result) => {
           if (result.isConfirmed) {
 
         this.arrayEvents.splice(i, 1);
             swalWithBootstrapButtons.fire(
-              'Deleted!',
-              'Your file has been deleted.',
+              'Eliminado!',
+              'Tu archivo ha sido eliminado.',
               'success'
             )
           } else if (
@@ -56,8 +56,8 @@ Swal
             result.dismiss === Swal.DismissReason.cancel
           ) {
             swalWithBootstrapButtons.fire(
-              'Cancelled',
-              'Your imaginary file is safe :)',
+              'Cancelado',
+              'No has borrado el archivo:',
               'error'
             )
           }
