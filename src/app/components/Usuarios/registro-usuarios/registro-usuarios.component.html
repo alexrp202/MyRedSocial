@@ -62,6 +62,19 @@
       La contraseña es demasiado corta
     </div>
 
+
+
+ <!-- CONFIRMAR CONTRASEÑA -->
+    <div class="form-group">
+      <label>Confirmar Contraseña:</label>
+      <input id="confirmPassword"  formControlName="confirmPassword" type="password" class="form-control" placeholder="Repite la contraseña">
+
+      <!-- VALIDACIONES -->
+      <div class="alert alert-danger" *ngIf="myForm.get('confirmPassword').hasError('NoPassswordMatch')&& myForm.get('confirmPassword').touched">
+       No es la misma contraseña
+      </div>
+    </div>
+
 <!-- CORREO ELECTRONICO -->
 <label>Correo electronico</label>
 <input name="email" [(ngModel)]="ModeloFormulario.email"  formControlName="email" type="email"

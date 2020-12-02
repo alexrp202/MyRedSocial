@@ -2,6 +2,7 @@
   <div class="row mt-3">
 
     <div class="col">
+      <h1>Usuarios:</h1>
       <div class="list-group">
         <a *ngFor="let usuario of ArrayUsuarios" class="list-group-item list-group-item-action"
           (click)="SeleccionarUsuario(usuario)">{{usuario.nombre}}</a>
