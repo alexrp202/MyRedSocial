@@ -15,8 +15,9 @@ export class ListadoUsuariosAdminComponent implements OnInit {
 
 
 
-  arrayEvents: usuario[] = [{ nombre: 'Sergi', apellido: 'Bertran',password: '********',email:'@mail.com',edad:'21',sexo:'mucho',localidad:'Peru',descripcion:'ayyayayayay',imagen:'panamero.jpg' },
-  { nombre: 'Niñato', apellido: 'Jr',password: '********',email:'@mail.com',edad:'21',sexo:'mucho',localidad:'Torrefarrera',descripcion:'Descripcion larga',imagen:'imayen.jpg'  }];
+  arrayEvents: usuario[] = [{ nombre: 'Ousmane', apellido: 'Dembele',password: '********',email:'OusmaneDembo@mail.com',edad:'23',sexo:'Hombre',localidad:'Vernon,Francia',descripcion:'Delantero en el Fútbol Club Barcelona.',imagen:'https://tmssl.akamaized.net/images/portrait/header/288230-1561038993.jpg' },
+  { nombre: 'Niñato', apellido: 'Jr',password: '********',email:'Ninato@mail.com',edad:'28',sexo:'Hombre',localidad:'Brasil',descripcion:'Delantero en el Paris Saint Germain.',imagen:'https://i.pinimg.com/564x/cb/84/90/cb8490e60a45b245907c1ca87c41e9d4.jpg'  },
+  { nombre: 'Ansu', apellido: 'Fati',password: '********',email:'AnsuFati@mail.com',edad:'18',sexo:'Hombre',localidad:'España',descripcion:'Delantero en el Fútbol Club Barcelona.',imagen:'https://tmssl.akamaized.net/images/portrait/header/466810-1560761660.jpg'  }];
 
 Swal
   eliminar(i) {

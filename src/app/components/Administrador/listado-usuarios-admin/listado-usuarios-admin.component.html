@@ -6,18 +6,20 @@
     <div class="card-body">
       <h5 class="card-title">{{item.apellido}}</h5>
 
-      <li>{{item.nombre}}</li>
-      <li>{{item.apellido}}</li>
-      <li>{{item.password}}</li>
-      <li>{{item.email}}</li>
-      <li>{{item.edad}}</li>
-      <li>{{item.sexo}}</li>
-      <li>{{item.localidad}}</li>
-      <li>{{item.descripcion}}</li>
-      <li>{{item.imagen}}</li>
+      <li>Nombre: {{item.nombre}}</li>
+      <li>Apellido: {{item.apellido}}</li>
+      <li>Password: {{item.password}}</li>
+      <li>Email: {{item.email}}</li>
+      <li>Edad: {{item.edad}}</li>
+      <li>Sexo: {{item.sexo}}</li>
+      <li>Localidad: {{item.localidad}}</li>
+      <li>Descripcion: {{item.descripcion}}</li>
+      <br>
+      <li>
+        <img [src]="item.imagen" width="250px" height="250px" ></li>
 
       <br>
-      <input class="btn btn-success" type="button" (click)="eliminar(i)" value="eliminar"/>
+      <input class="btn btn-danger" type="button" (click)="eliminar(i)" value="Eliminar"/>
     </div>
   </div>
 </ul>
