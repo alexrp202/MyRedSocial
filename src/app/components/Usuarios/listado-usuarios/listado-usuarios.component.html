@@ -1,6 +1,6 @@
 
 <div class="list-group">
-
-  <app-elemento-usuario  [usuario] (selectEvent)="informarUsuario($event)"></app-elemento-usuario>
+  <div *ngFor="let usuario of listaUsuarios">
+    <app-elemento-usuario  [usuario]="usuario" (selectEvent)="informarUsuario($event)"></app-elemento-usuario>
+  </div>
 </div>
-

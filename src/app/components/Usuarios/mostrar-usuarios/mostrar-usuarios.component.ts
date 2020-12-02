@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { usuario } from 'src/app/models/usuarios';
-
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-mostrar-usuarios',
   templateUrl: './mostrar-usuarios.component.html',
@@ -9,6 +9,8 @@ import { usuario } from 'src/app/models/usuarios';
 export class MostrarUsuariosComponent implements OnInit {
 
   listausuario: usuario[] = []
+  NuevoUsuario: boolean = false;
+  Informacion: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -16,10 +18,20 @@ export class MostrarUsuariosComponent implements OnInit {
 
   UsuarioSeleccionado: usuario;
   cambiarUsuario(trabajador) {
+    this.Informacion=true
     this.UsuarioSeleccionado = trabajador;
+
   }
 
-  addEvento(nEvent){
+  addUsuario(nEvent){
+    this.NuevoUsuario=true
+    Swal.fire(
+      'Felicidades!',
+      'Usuario creado!',
+      'success'
+    )
     this.listausuario.push(nEvent)
+
   }
+
 }

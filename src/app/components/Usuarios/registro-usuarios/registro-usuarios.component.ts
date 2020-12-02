@@ -7,9 +7,10 @@ import { usuario } from 'src/app/models/usuarios';
   styleUrls: ['./registro-usuarios.component.css']
 })
 export class RegistroUsuariosComponent implements OnInit {
-  @Output() altaEvento = new EventEmitter<usuario>();
+  @Output() altaUsuario = new EventEmitter<usuario>();
+
   myForm: FormGroup;
-  ModeloFormulario = new usuario('', '', '', '',0,'','','','');
+  ModeloFormulario = new usuario('', '', '', '', '','','','','');
 
   // CONSTRUCTOR DEL FORMULARIO
 
@@ -21,7 +22,7 @@ export class RegistroUsuariosComponent implements OnInit {
       email: ['', [Validators.email, Validators.required]],
       edad: ['', [Validators.min(1), Validators.max(150), Validators.required]],
       sexo: ['', [Validators.required]],
-      localidad: ['',],
+      localidad: ['',[Validators.minLength(2), Validators.maxLength(30), Validators.required]],
       descripcion: ['', [Validators.minLength(20), Validators.maxLength(50), Validators.required]],
       imagen: ['',  [Validators.required,Validators.pattern("(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?") ]],
       checkbox:[CheckboxRequiredValidator]
@@ -33,8 +34,14 @@ export class RegistroUsuariosComponent implements OnInit {
   }
 
   EnviarDatos(){
-    this.altaEvento.emit(this.ModeloFormulario);
-    this.ModeloFormulario = new usuario('', '', '', '',0,'','','','');
+    this.altaUsuario.emit(this.ModeloFormulario);
+    this.ModeloFormulario = new usuario('', '', '', '','','','','','');
     this.myForm.reset();
   }
-}
+
+
+
+
+
+  }
+

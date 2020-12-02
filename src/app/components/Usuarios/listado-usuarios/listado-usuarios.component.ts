@@ -1,4 +1,4 @@
-import { Component, OnInit,  Output, EventEmitter } from '@angular/core';
+import { Component, OnInit,Input,  Output, EventEmitter } from '@angular/core';
 import { usuario } from 'src/app/models/usuarios';
 
 @Component({
@@ -8,6 +8,7 @@ import { usuario } from 'src/app/models/usuarios';
 })
 export class ListadoUsuariosComponent implements OnInit {
 
+  @Input() listaUsuarios:usuario[] ;
   @Output() informarEvent = new EventEmitter<usuario>();
   constructor() { }
 
