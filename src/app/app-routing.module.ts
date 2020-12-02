@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PanelAdministradorComponent } from './components/Administrador/panel-administrador/panel-administrador.component';
-import { ListadoUsuariosComponent } from './components/Usuarios/listado-usuarios/listado-usuarios.component';
 import { MostrarUsuariosComponent } from './components/Usuarios/mostrar-usuarios/mostrar-usuarios.component';
 
 const routes: Routes = [

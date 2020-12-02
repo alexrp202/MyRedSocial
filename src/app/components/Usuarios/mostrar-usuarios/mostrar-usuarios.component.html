@@ -1,29 +1,27 @@
+<div class="container">
+  <div class="row mt-3">
 
-<div class="table-responsive">
-  <table class="table ">
-    <tr>
-      <th><div *ngIf="NuevoUsuario === !false" class="col">
-        <h3>Usuarios</h3>
-        <app-listado-usuarios [listaUsuarios]="listausuario" (informarEvent)="cambiarUsuario($event)"></app-listado-usuarios>
-      </div></th>
-      <th>
-        <div class="container">
-          <div *ngIf="Informacion === !false" class="col">
-          <h3>Detalles del usuario:</h3>
-          <app-perfiles-usuarios [usuario]="UsuarioSeleccionado"></app-perfiles-usuarios>
-        </div>
-        </div>
-      </th>
-      <th>
-        <div class="container">
-        <div class="col">
-          <h3></h3>
-          <app-registro-usuarios (altaUsuario)="addUsuario($event)"></app-registro-usuarios>
-        </div>
-        </div>
-      </th>
+    <div class="col">
+      <div class="list-group">
+        <a *ngFor="let usuario of ArrayUsuarios" class="list-group-item list-group-item-action"
+          (click)="SeleccionarUsuario(usuario)">{{usuario.nombre}}</a>
+      </div>
 
+      <br>
 
-    </tr>
-  </table>
+      <button type="button" class="btn btn-info" (click)="botonAdd()">Add Usuario</button>
+
+    </div>
+
+    <div *ngIf="Informacion === true" class="col">
+      <app-perfiles-usuarios [usuario]="UsuarioSeleccionado"></app-perfiles-usuarios>
+    </div>
+
+    <div *ngIf="CreandoUsuario === true" class="col">
+
+      <app-registro-usuarios (altaUsuario)="addUsuario($event)"></app-registro-usuarios >
+
+    </div>
+
   </div>
+</div>

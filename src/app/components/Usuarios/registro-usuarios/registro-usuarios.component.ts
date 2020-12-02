@@ -7,7 +7,7 @@ import { usuario } from 'src/app/models/usuarios';
   styleUrls: ['./registro-usuarios.component.css']
 })
 export class RegistroUsuariosComponent implements OnInit {
-  @Output() altaUsuario = new EventEmitter<usuario>();
+  @Output() altaUsuario: EventEmitter<usuario> = new EventEmitter<usuario>();
 
   myForm: FormGroup;
   ModeloFormulario = new usuario('', '', '', '', '','','','','');

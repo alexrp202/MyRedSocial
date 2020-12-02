@@ -8,30 +8,40 @@ import Swal from 'sweetalert2'
 })
 export class MostrarUsuariosComponent implements OnInit {
 
-  listausuario: usuario[] = []
-  NuevoUsuario: boolean = false;
-  Informacion: boolean = false;
-  constructor() { }
-
+  ArrayUsuarios: usuario[] = [];
+  UsuarioSeleccionado: usuario = null;
+  CreandoUsuario: boolean = false;
+  Informacion:boolean=false;
+  // Se llama al inicializar el componente
   ngOnInit(): void {
+    // Cargamos el personaje que tengamos guardado previamente en memoria del navegador
+    let usuario = localStorage.getItem('usuario');
+    this.UsuarioSeleccionado = JSON.parse(usuario);
   }
 
-  UsuarioSeleccionado: usuario;
-  cambiarUsuario(trabajador) {
-    this.Informacion=true
-    this.UsuarioSeleccionado = trabajador;
+  // Función que se ejecuta al hacer click en un personaje de la lista
+  SeleccionarUsuario(character: usuario): void {
+
+    // Quitamos la interfaz de crear un personaje
+    this.CreandoUsuario = false;
+    this.Informacion = true;
+    // Guardamos en una variable de la clase el personaje seleccionado
+    this.UsuarioSeleccionado = character;
+
+    // Guardamos en el local storage del navegador el personaje seleccionado
+    localStorage.setItem('usuario', JSON.stringify(character));
+  }
+
+  // Funcion para añadir un nuevo personaje en el array
+  addUsuario(NuevoUsuario: usuario): void {
+    this.ArrayUsuarios.push(NuevoUsuario);
+    this.CreandoUsuario=false
 
   }
 
-  addUsuario(nEvent){
-    this.NuevoUsuario=true
-    Swal.fire(
-      'Felicidades!',
-      'Usuario creado!',
-      'success'
-    )
-    this.listausuario.push(nEvent)
-
+  botonAdd(){
+    this.CreandoUsuario = true
+    this.Informacion=false
   }
 
 }
