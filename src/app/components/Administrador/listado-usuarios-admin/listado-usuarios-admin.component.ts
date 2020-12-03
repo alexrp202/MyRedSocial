@@ -21,11 +21,6 @@ export class ListadoUsuariosAdminComponent implements OnInit {
 
 Swal
   eliminar(i) {
-
-
-
-
-
         const swalWithBootstrapButtons = Swal.mixin({
           customClass: {
             confirmButton: 'btn btn-success',
