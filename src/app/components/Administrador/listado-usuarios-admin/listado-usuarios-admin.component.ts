@@ -19,7 +19,7 @@ export class ListadoUsuariosAdminComponent implements OnInit {
   { nombre: 'Niñato', apellido: 'Jr',password: '********',email:'Ninato@mail.com',edad:'28',sexo:'Hombre',localidad:'Brasil',descripcion:'Delantero en el Paris Saint Germain.',imagen:'https://i.pinimg.com/564x/cb/84/90/cb8490e60a45b245907c1ca87c41e9d4.jpg'  },
   { nombre: 'Ansu', apellido: 'Fati',password: '********',email:'AnsuFati@mail.com',edad:'18',sexo:'Hombre',localidad:'España',descripcion:'Delantero en el Fútbol Club Barcelona.',imagen:'https://tmssl.akamaized.net/images/portrait/header/466810-1560761660.jpg'  }];
 
-Swal
+
   eliminar(i) {
         const swalWithBootstrapButtons = Swal.mixin({
           customClass: {
