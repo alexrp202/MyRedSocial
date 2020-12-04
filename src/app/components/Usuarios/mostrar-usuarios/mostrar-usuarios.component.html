@@ -4,20 +4,21 @@
     <div class="col">
       <h1>Usuarios:</h1>
       <div class="list-group">
+        <!-- Recorro el Array de usuarios, con la posiblidad de con un click ver los detalles correspondientes -->
         <a *ngFor="let usuario of ArrayUsuarios" class="list-group-item list-group-item-action"
           (click)="SeleccionarUsuario(usuario)">{{usuario.nombre}}</a>
       </div>
 
       <br>
-
+<!-- Boton para añadir y subir nuevo usuario -->
       <button type="button" class="btn btn-info" (click)="botonAdd()">Add Usuario</button>
 
     </div>
-
+<!-- Si se cumple la condicion se vera esto -->
     <div *ngIf="Informacion === true" class="col">
       <app-perfiles-usuarios [usuario]="UsuarioSeleccionado"></app-perfiles-usuarios>
     </div>
-
+<!-- Si se cumple la condicion se vera lo que contiene -->
     <div *ngIf="CreandoUsuario === true" class="col">
 
       <app-registro-usuarios (altaUsuario)="addUsuario($event)"></app-registro-usuarios >
