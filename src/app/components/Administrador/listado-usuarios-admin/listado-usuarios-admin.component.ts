@@ -14,49 +14,49 @@ export class ListadoUsuariosAdminComponent implements OnInit {
 
 
 
-// Array con los usuarios
-  arrayEvents: usuario[] = [{ nombre: 'Ousmane', apellido: 'Dembele',password: '********',email:'OusmaneDembo@mail.com',edad:'23',sexo:'Hombre',localidad:'Vernon,Francia',descripcion:'Delantero en el Fútbol Club Barcelona.',imagen:'https://tmssl.akamaized.net/images/portrait/header/288230-1561038993.jpg' },
-  { nombre: 'Niñato', apellido: 'Jr',password: '********',email:'Ninato@mail.com',edad:'28',sexo:'Hombre',localidad:'Brasil',descripcion:'Delantero en el Paris Saint Germain.',imagen:'https://i.pinimg.com/564x/cb/84/90/cb8490e60a45b245907c1ca87c41e9d4.jpg'  },
-  { nombre: 'Ansu', apellido: 'Fati',password: '********',email:'AnsuFati@mail.com',edad:'18',sexo:'Hombre',localidad:'España',descripcion:'Delantero en el Fútbol Club Barcelona.',imagen:'https://tmssl.akamaized.net/images/portrait/header/466810-1560761660.jpg'  }];
+  // Array con los usuarios
+  arrayEvents: usuario[] = [{ nombre: 'Ousmane', apellido: 'Dembele', password: '********', email: 'OusmaneDembo@mail.com', edad: '23', sexo: 'Hombre', localidad: 'Vernon,Francia', descripcion: 'Delantero en el Fútbol Club Barcelona.', imagen: 'https://tmssl.akamaized.net/images/portrait/header/288230-1561038993.jpg' },
+  { nombre: 'Niñato', apellido: 'Jr', password: '********', email: 'Ninato@mail.com', edad: '28', sexo: 'Hombre', localidad: 'Brasil', descripcion: 'Delantero en el Paris Saint Germain.', imagen: 'https://i.pinimg.com/564x/cb/84/90/cb8490e60a45b245907c1ca87c41e9d4.jpg' },
+  { nombre: 'Ansu', apellido: 'Fati', password: '********', email: 'AnsuFati@mail.com', edad: '18', sexo: 'Hombre', localidad: 'España', descripcion: 'Delantero en el Fútbol Club Barcelona.', imagen: 'https://tmssl.akamaized.net/images/portrait/header/466810-1560761660.jpg' }];
 
-// Funcion que se encarga de eliminar y de mostrar un mensaje con SweetAlert
+  // Funcion que se encarga de eliminar y de mostrar un mensaje con SweetAlert
   eliminar(i) {
-        const swalWithBootstrapButtons = Swal.mixin({
-          customClass: {
-            confirmButton: 'btn btn-success',
-            cancelButton: 'btn btn-danger'
-          },
-          buttonsStyling: false
-        })
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: false
+    })
 
-        swalWithBootstrapButtons.fire({
-          title: 'Estas seguro?',
-          text: "No vas a poder revertir los cambios",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonText: 'Si, deseo borrar!',
-          cancelButtonText: 'No, cancelar!',
-          reverseButtons: true
-        }).then((result) => {
-          if (result.isConfirmed) {   //Solo cuando confirmo
-// Utilizo la funcion .splice para eliminar el usuario
+    swalWithBootstrapButtons.fire({
+      title: 'Estas seguro?',
+      text: "No vas a poder revertir los cambios",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Si, deseo borrar!',
+      cancelButtonText: 'No, cancelar!',
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {   //Solo cuando confirmo
+        // Utilizo la funcion .splice para eliminar el usuario
         this.arrayEvents.splice(i, 1);
-            swalWithBootstrapButtons.fire(
-              'Eliminado!',
-              'Tu archivo ha sido eliminado.',
-              'success'
-            )
-          } else if (
-            /* Read more about handling dismissals below */
-            result.dismiss === Swal.DismissReason.cancel
-          ) {
-            swalWithBootstrapButtons.fire(
-              'Cancelado',
-              'No has borrado el archivo:',
-              'error'
-            )
-          }
-        })
+        swalWithBootstrapButtons.fire(
+          'Eliminado!',
+          'Tu archivo ha sido eliminado.',
+          'success'
+        )
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Cancelado',
+          'No has borrado el archivo:',
+          'error'
+        )
+      }
+    })
 
 
 

@@ -1,11 +1,9 @@
-ul{
+ul {
   /* Para que se alinee la lista en orizontal*/
   display: inline-block;
-
 }
 
-li{
+li {
   /* Para que no salga la Viñeta */
   list-style-type: none;
-
 }

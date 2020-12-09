@@ -1,6 +1,6 @@
-export class usuario{
+export class usuario {
 
-//CONSTRUCTOR DE LOS USUARIOS PARA EL FORMULARIO
+  //CONSTRUCTOR DE LOS USUARIOS PARA EL FORMULARIO
   constructor(
     public nombre: string,
     public apellido: string,
@@ -10,7 +10,7 @@ export class usuario{
     public sexo: string,
     public localidad: string,
     public descripcion: string,
-    public imagen:string
+    public imagen: string
   ) { }
 
 }

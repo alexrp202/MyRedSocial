@@ -1,4 +1,3 @@
-
 <!-- Recorre el array de los Usuarios (arrayEvents) -->
 <ul *ngFor="let item of arrayEvents; let i = index" [attr.data-index]="i">
   <div class="card">
@@ -9,18 +8,17 @@
       <li><b>Nombre:</b> {{item.nombre}}</li>
       <li><b>Apellido:</b> {{item.apellido}}</li>
       <li><b>Email:</b> {{item.email}}</li>
-      <li><b>Edad:</b>  {{item.edad}}</li>
-      <li><b>Sexo:</b>  {{item.sexo}}</li>
-      <li><b>Localidad:</b>  {{item.localidad}}</li>
-      <li><b>Descripcion:</b>  {{item.descripcion}}</li>
+      <li><b>Edad:</b> {{item.edad}}</li>
+      <li><b>Sexo:</b> {{item.sexo}}</li>
+      <li><b>Localidad:</b> {{item.localidad}}</li>
+      <li><b>Descripcion:</b> {{item.descripcion}}</li>
       <br>
       <li>
-        <img [src]="item.imagen" width="250px" height="250px" ></li>
+        <img [src]="item.imagen" width="250px" height="250px"></li>
       <!-- Para que se vea la imagen, procedemos a utilizar la etiqueta img y el atributo [src]  -->
       <br>
-      <input class="btn btn-danger" type="button" (click)="eliminar(i)" value="Eliminar"/>
+      <input class="btn btn-danger" type="button" (click)="eliminar(i)" value="Eliminar" />
       <!-- Boton de Boostrap con la funcion "eliminar" -->
     </div>
   </div>
 </ul>
-

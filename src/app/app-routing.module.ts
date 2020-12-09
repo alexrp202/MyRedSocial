@@ -5,8 +5,8 @@ import { MostrarUsuariosComponent } from './components/Usuarios/mostrar-usuarios
 
 const routes: Routes = [
 
-  {path: 'mostrar-usuarios',component: MostrarUsuariosComponent},
-  {path: 'panel-administrador', component: PanelAdministradorComponent},
+  { path: 'mostrar-usuarios', component: MostrarUsuariosComponent },
+  { path: 'panel-administrador', component: PanelAdministradorComponent },
   { path: '', pathMatch: 'full', redirectTo: 'mostrar-usuarios' },
   { path: '**', redirectTo: 'mostrar-usuarios' }
 
