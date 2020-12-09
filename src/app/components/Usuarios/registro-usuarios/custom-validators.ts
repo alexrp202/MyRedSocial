@@ -3,11 +3,11 @@ import { AbstractControl } from '@angular/forms';
 export class CustomValidators {
 
   static passwordMatchValidator(control: AbstractControl) {
-    const password: string = control.get('password').value; // get password from our password form control
-    const confirmPassword: string = control.get('confirmPassword').value; // get password from our confirmPassword form control
-    // compare is the password math
+    const password: string = control.get('password').value; // getea la password desde el campo password
+    const confirmPassword: string = control.get('confirmPassword').value; // getea la password desde nuestro campo confirmPassword form control
+    // compara las contraseñas
     if (password !== confirmPassword) {
-      // if they don't match, set an error in our confirmPassword form control
+      // si las passwords no corresponden, setea un error en nuestro confirmPassword control
       control.get('confirmPassword').setErrors({ NoPassswordMatch: true });
     }
   }
